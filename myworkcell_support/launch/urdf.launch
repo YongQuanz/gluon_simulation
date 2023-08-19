@@ -1,0 +1,15 @@
+<launch>
+  <arg name="gui" default="true"/>
+
+  <!-- Loads the robot model -->
+  <param name="robot_description" textfile="$(find myworkcell_support)/urdf/gluon.urdf"/>
+
+  <!-- We do not have a robot connected, so publish fake joint states -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="$(arg gui)"/>
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find myworkcell_support)/robot.rviz" required="true"/>
+</launch>

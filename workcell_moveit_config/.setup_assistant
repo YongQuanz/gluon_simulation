@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: myworkcell_support
+    relative_path: urdf/gluon.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/gluon.srdf
+  CONFIG:
+    author_name: Yong Quan
+    author_email: yongquan6993@gmail.com
+    generated_timestamp: 1692337886
